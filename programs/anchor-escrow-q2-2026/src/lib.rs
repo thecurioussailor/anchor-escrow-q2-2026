@@ -24,6 +24,6 @@ pub mod anchor_escrow_q2_2026 {
     #[instruction(discriminator = 1)]
     pub fn take(ctx: Context<Take>) -> Result<()> {
         ctx.accounts.deposit()?;
-        ctx.accounts.Withdraw_and_close_vault()
+        ctx.accounts.withdraw_and_close_vault()
     }
 }
