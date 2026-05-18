@@ -6,13 +6,6 @@ use anchor_spl::{
 
 use crate::{ESCROW_SEED, state::Escrow};
 
-
-
-//maker
-//mintA and Mint B
-//maker_ata_a
-//escrow and the vault
-//Associated Token program, token program, system program
 #[derive(Accounts)]
 #[instruction(seeds: u64)]
 pub struct Make<'info> {

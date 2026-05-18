@@ -3,8 +3,6 @@ pub mod error;
 pub mod instructions;
 pub mod state;
 
-use anchor_lang::prelude::*;
-
 pub use constants::*;
 pub use instructions::*;
 pub use state::*;
@@ -25,5 +23,10 @@ pub mod anchor_escrow_q2_2026 {
     pub fn take(ctx: Context<Take>) -> Result<()> {
         ctx.accounts.deposit()?;
         ctx.accounts.withdraw_and_close_vault()
+    }
+
+    #[instruction(discriminator = 2)]
+    pub fn refund(ctx: Context<Refund>) -> Result<()> {
+        ctx.accounts.refund_and_close_vault()
     }
 }
