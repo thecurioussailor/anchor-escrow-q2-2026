@@ -20,4 +20,10 @@ pub mod anchor_escrow_q2_2026 {
         ctx.accounts.init_escrow(seed, receive, &ctx.bumps)?;
         ctx.accounts.deposit(deposit)
     }
+
+    #[instruction(discriminator = 1)]
+    pub fn take(ctx: Context<Take>) -> Result<()> {
+        ctx.accounts.deposit()?;
+        ctx.accounts.Withdraw_and_close_vault()
+    }
 }
