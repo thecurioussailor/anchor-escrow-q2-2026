@@ -95,7 +95,7 @@ impl<'info> Take<'info> {
     }
 
     //Withdraw tokens from the vault to Taker and close the vault
-    pub fn Withdraw_and_close_vault(&mut self) -> Result<()> {
+    pub fn withdraw_and_close_vault(&mut self) -> Result<()> {
         
         let cpi_accounts = TransferChecked {
             from: self.vault.to_account_info(),
